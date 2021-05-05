@@ -6,7 +6,6 @@ from typing import List, Dict
 import requests
 from fastapi import FastAPI
 from pydantic import BaseModel
-
 get_ram = lambda: psutil.Process(os.getpid()).memory_info().rss // 1e6
 
 class WorldModel(BaseModel):
@@ -28,7 +27,9 @@ def get_action(state: WorldModel):
 
 @app.on_event("startup")
 def start_agent_server():
-    agent_api = "https://" + os.environ['HEROKU_APP_NAME'] + ".herokuapp.com"
+    with open("heroku_app_name.txt", 'r') as f:
+        HEROKU_APP_NAME = f.read()
+    agent_api = f"https://{HEROKU_APP_NAME}.herokuapp.com"
     game = "https://open-worlds.herokuapp.com"
     params = (
         ('agent_api', agent_api),
