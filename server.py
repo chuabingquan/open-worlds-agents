@@ -28,7 +28,7 @@ def get_action(state: WorldModel):
 
 @app.on_event("startup")
 def start_agent_server():
-    agent_api = "https://" + os.environ['URL']
+    agent_api = "https://" + os.environ['HEROKU_APP_NAME'] + ".herokuapp.com"
     game = "https://open-worlds.herokuapp.com"
     params = (
         ('agent_api', agent_api),
