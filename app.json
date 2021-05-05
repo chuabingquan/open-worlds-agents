@@ -1,6 +1,6 @@
 {
   "name": "Open Worlds Agents",
-  "description": "A random baseline agent for Open Worlds Online.",
-  "repository": "https://github.com/open-worlds-online/open-worlds-agents",
-  "keywords": ["python", "fastapi", "random"]
+  "description": "A random baseline agent for Open Worlds.",
+  "repository": "https://github.com/jetnew/open-worlds-agents",
+  "keywords": ["python", "fastapi", "agent"]
 }
