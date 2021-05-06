@@ -1,1 +1,1 @@
-open-worlds-agents
+agent-peanut
